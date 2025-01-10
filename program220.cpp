@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+int Average(int Arr[],int iSize)
+{
+    int i = 0, iSum = 0;
+    float fAns = 0.0f;
+
+    for(i = 0; i < iSize; i++)
+    {
+        iSum = iSum + Arr[i];
+    }
+    fAns = (float)iSum / (float)iSize;
+    return fAns;
+}
+
+int main()
+{
+    int iLength = 0, i = 0;
+    float fRet = 0.0f;
+
+    int *ptr = NULL;
+
+    cout<<"Enter Number Of Elements That You Want To Store : "<<endl;
+    cin>>iLength;
+
+    ptr = new int [iLength];
+
+    cout<<"Enter the elements : "<<endl;
+    
+    for(i = 0 ; i < iLength ; i++)
+    {
+        cin>>ptr[i];
+    }
+    
+    fRet = Average(ptr, iLength);
+
+    cout<<"Average is : "<<fRet<<endl; 
+
+    delete []ptr;
+    
+    return 0;
+}
